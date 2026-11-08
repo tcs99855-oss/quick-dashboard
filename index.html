@@ -1,0 +1,166 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f4f6ff"><title>Quick Dashboard</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><style>
+:root{--ink:#18213c;--muted:#67738d}*{box-sizing:border-box}body{background:#f4f6ff;color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}.app{max-width:1160px}.mast{background:linear-gradient(112deg,#212b80 0%,#6248c8 53%,#9a55dd 100%);color:#fff;border-radius:26px;position:relative;overflow:hidden;box-shadow:0 15px 34px #4446a52a}.mast:after{content:"";position:absolute;right:-90px;top:-150px;width:360px;height:360px;border:75px solid #ffffff15;border-radius:50%;pointer-events:none}.mast>*{position:relative;z-index:1}.brand-mark{display:inline-flex;align-items:center;justify-content:center;width:43px;height:43px;border-radius:14px;background:#ffffff27;font-size:1.4rem}.mast h1{font-size:clamp(1.7rem,4vw,2.7rem);font-weight:850;letter-spacing:-.045em}.mast p{color:#e4e4ff}.btn-refresh{background:#fff;color:#4935a7;border:0;font-weight:750;border-radius:13px;padding:10px 18px;box-shadow:0 6px 20px #20136820}.btn-refresh:hover{background:#f1efff;color:#392a87}.state{font-size:.77rem;color:#edeaff}.state .dot{display:inline-block;background:#fcd572;border-radius:50%;height:7px;width:7px;margin-right:5px}.state .dot.ok{background:#61e9a6}.state .dot.bad{background:#ffacaf}.market-card{position:relative;border:1px solid #e8eafa;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 9px 25px #303f7620;height:100%;padding:19px 20px 16px}.market-card:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--accent)}.market-card .iconbox{height:40px;width:40px;display:inline-flex;align-items:center;justify-content:center;border-radius:13px;background:var(--tint);color:var(--accent);font-size:1.25rem}.card-label{font-size:.77rem;font-weight:750;color:#59647d;letter-spacing:.035em}.card-num{font-size:clamp(1.5rem,3.3vw,2.2rem);font-weight:850;letter-spacing:-.05em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;line-height:1.25}.card-detail{font-size:.82rem;color:#73809a}.tiny{font-size:.7rem;color:#8590a6}.chip{font-size:.69rem;font-weight:750;padding:5px 9px;border-radius:50px;color:var(--accent);background:var(--tint)}.panel{background:#fff;border:1px solid #e8eafa;border-radius:22px;padding:20px 22px;box-shadow:0 9px 25px #303f7616;height:100%}.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px;gap:8px}.panel h2{font-size:1.05rem;font-weight:800;margin:0;letter-spacing:-.02em}.panel .bi{color:var(--accent)}.rate-row{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid #eff1f7;gap:8px;font-size:.87rem}.rate-row:last-child{border-bottom:0}.rate-row strong{font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}.section-label{font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#7d88a0}.footer{font-size:.75rem;color:#8992a8;text-align:center;padding:16px 0 25px}.spinner-border{width:1rem;height:1rem;border-width:2px}.muted{color:var(--muted)}.sensex{--accent:#6355dc;--tint:#efedff}.fx{--accent:#0a9aab;--tint:#e3f9fc}.gold{--accent:#d68b06;--tint:#fff4d9}.indiametal{--accent:#e45d8e;--tint:#fff0f5}.petrol{--accent:#168c65;--tint:#e3f8ee}.silver{--accent:#6480ad;--tint:#eaf1ff}.note{font-size:.71rem;color:#9098ac;margin-top:12px}.statusline{color:#d9d8ff;font-size:.74rem}.accent-value{color:var(--accent)}
+@media(max-width:575.98px){.app{padding:10px 10px 0!important}.mast{padding:17px!important;border-radius:19px}.mast h1{font-size:1.75rem}.mast p{font-size:.74rem;margin-bottom:0}.brand-mark{width:36px;height:36px;font-size:1.1rem}.mast .topline{gap:10px!important}.mast .bottomline{margin-top:14px!important}.btn-refresh{padding:8px 11px;font-size:.76rem}.state{font-size:.66rem}.statusline{font-size:.66rem}.market-card{padding:13px 12px 12px;border-radius:16px}.market-card .iconbox{width:32px;height:32px;border-radius:10px;font-size:1rem}.card-label{font-size:.68rem}.card-num{font-size:1.42rem}.card-detail{font-size:.69rem}.chip{font-size:.59rem;padding:4px 6px}.tiny{font-size:.62rem}.panel{padding:15px 14px;border-radius:17px}.panel h2{font-size:.96rem}.rate-row{font-size:.77rem;padding:11px 0}.note{font-size:.66rem}.section-label{font-size:.68rem}.row{--bs-gutter-x:10px;--bs-gutter-y:10px}}
+@media(max-width:350px){.card-num{font-size:1.2rem}.card-label{font-size:.62rem}.chip{font-size:.54rem}}
+
+/* Editorial photo accents: images are decorative, values remain fully readable */
+.market-card{isolation:isolate;min-height:194px}
+.market-card .photo{position:absolute;right:0;top:5px;width:48%;height:116px;object-fit:cover;object-position:center;opacity:.30;filter:saturate(1.12);mask-image:linear-gradient(to left,#000 25%,transparent 100%);-webkit-mask-image:linear-gradient(to left,#000 25%,transparent 100%);pointer-events:none;z-index:-1}
+.market-card .iconbox,.market-card .chip,.market-card .card-label,.market-card .card-num,.market-card .card-detail,.market-card .tiny{position:relative;z-index:1}
+.market-card.sensex{background:linear-gradient(145deg,#fff 35%,#f1efff)}
+.market-card.fx{background:linear-gradient(145deg,#fff 35%,#e9fbff)}
+.market-card.gold{background:linear-gradient(145deg,#fff 35%,#fff5dc)}
+.panel{overflow:hidden;position:relative;isolation:isolate}
+.panel .panel-photo{position:absolute;right:0;top:0;width:34%;height:94px;object-fit:cover;opacity:.22;mask-image:linear-gradient(to left,#000,transparent);-webkit-mask-image:linear-gradient(to left,#000,transparent);pointer-events:none;z-index:-1}
+.panel.gold{background:linear-gradient(125deg,#fff,#fffbef)}
+.panel.indiametal{background:linear-gradient(125deg,#fff,#fff3f8)}
+.panel.petrol{background:linear-gradient(125deg,#fff,#ecfff7)}
+.mast .hero-photo{position:absolute;right:0;top:0;width:43%;height:100%;object-fit:cover;opacity:.16;mask-image:linear-gradient(to left,#000,transparent);-webkit-mask-image:linear-gradient(to left,#000,transparent);pointer-events:none;z-index:0}
+.photo-credit{font-size:.62rem;color:#9aa2b5;text-align:center;margin:-6px 0 12px}
+@media(max-width:575.98px){.market-card{min-height:174px}.market-card .photo{height:95px;width:60%;opacity:.26}.panel .panel-photo{height:74px;width:40%}.mast .hero-photo{width:60%;opacity:.13}}
+
+/* Quick Dashboard premium photo-forward redesign */
+body{background:linear-gradient(160deg,#f0f4ff 0%,#fff7ef 53%,#eaf9f5 100%);background-attachment:fixed}
+.mast{background:linear-gradient(112deg,#1b1c67,#5939b7 60%,#a347cb);box-shadow:0 18px 45px #4e3a9c36}
+.market-card{padding:0 0 16px;min-height:265px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.market-card:hover,.panel:hover{transform:translateY(-3px);box-shadow:0 15px 36px #303f7630}
+.market-card .photo{position:relative;top:auto;right:auto;display:block;width:100%;height:118px;opacity:1;filter:none;mask-image:none;-webkit-mask-image:none;z-index:0;object-fit:cover;object-position:center;flex-shrink:0}
+.market-card:after{content:"";position:absolute;top:82px;left:0;right:0;height:37px;background:linear-gradient(0deg,#fff 0%,transparent 100%);pointer-events:none}
+.market-card .d-flex{padding:0 17px;margin-top:-20px;position:relative;z-index:2}
+.market-card .iconbox{background:var(--accent);color:#fff;border:3px solid #fff;width:48px;height:48px;box-shadow:0 5px 12px #0002}
+.market-card .chip{background:#fff;color:var(--accent);box-shadow:0 2px 10px #0002}
+.market-card .card-label,.market-card .card-num,.market-card .card-detail,.market-card .tiny{margin-left:18px;margin-right:14px}
+.market-card .card-label{margin-top:12px!important;color:#536078}
+.market-card .card-num{margin-top:3px!important}
+.market-card .tiny{margin-top:auto!important;padding-top:8px}
+.market-card.sensex,.market-card.fx,.market-card.gold{background:#fff}
+.panel{padding:0 19px 15px;transition:transform .2s,box-shadow .2s}
+.panel .panel-photo{position:relative;top:auto;right:auto;width:calc(100% + 38px);height:105px;display:block;margin:0 -19px 13px;opacity:1;filter:none;mask-image:none;-webkit-mask-image:none;z-index:0;object-fit:cover;object-position:center}
+.panel.gold,.panel.indiametal,.panel.petrol{background:#fff}
+.panel .panel-head{position:relative;z-index:2;margin-top:-33px;min-height:39px;margin-bottom:14px;align-items:end}
+.panel h2{background:#fff;padding:10px 12px 8px;border-radius:12px 12px 0 0;box-shadow:0 -3px 8px #00000008}
+.panel .chip{background:var(--tint);border:2px solid #fff}
+.panel .rate-row{padding:12px 2px}
+.panel .rate-row strong{color:var(--accent)}
+.mast .hero-photo{width:35%;opacity:.55;mask-image:linear-gradient(to left,#000 10%,transparent 100%);-webkit-mask-image:linear-gradient(to left,#000 10%,transparent 100%)}
+.photo-credit{display:none}
+@media(max-width:575.98px){.market-card{min-height:236px;padding-bottom:12px}.market-card .photo{width:100%;height:93px;opacity:1}.market-card:after{top:64px;height:30px}.market-card .d-flex{padding:0 10px;margin-top:-17px}.market-card .iconbox{width:37px;height:37px;font-size:1rem;border-width:2px}.market-card .card-label,.market-card .card-num,.market-card .card-detail,.market-card .tiny{margin-left:11px;margin-right:9px}.market-card .card-label{margin-top:9px!important}.market-card .card-num{font-size:1.36rem}.market-card .card-detail{font-size:.67rem}.market-card .tiny{font-size:.59rem}.panel{padding:0 14px 13px}.panel .panel-photo{width:calc(100% + 28px);height:94px;margin:0 -14px 12px;opacity:1}.panel .panel-head{margin-top:-31px}.panel h2{padding:10px 10px 7px}.mast .hero-photo{opacity:.3;width:55%}}
+
+/* Tap-to-focus interaction */
+.market-card,.panel{cursor:pointer;transition:transform .22s ease,box-shadow .22s ease,outline-color .22s ease}
+.market-card:focus-visible,.panel:focus-visible{outline:3px solid #6454e9;outline-offset:3px}
+.focus-backdrop{position:fixed;inset:0;background:rgba(12,18,40,.76);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+.focus-backdrop.active{display:flex;animation:fadein .18s ease}
+.focus-frame{position:relative;width:min(100%,560px);max-height:min(88dvh,800px);overflow-y:auto;filter:drop-shadow(0 24px 45px #05091c88);animation:popin .2s ease}
+.focus-frame .market-card,.focus-frame .panel{height:auto;min-height:0;cursor:default;border:3px solid var(--accent);box-shadow:0 0 0 5px #ffffff33,0 20px 55px #0005;transform:none!important}
+.focus-frame .market-card .photo{height:185px}
+.focus-frame .panel .panel-photo{height:180px}
+.focus-frame .card-num{font-size:clamp(2rem,6vw,3rem)}
+.focus-frame .rate-row{font-size:1rem;padding:17px 4px}
+.focus-close{position:absolute;top:12px;right:12px;z-index:10;width:43px;height:43px;display:grid;place-items:center;background:#fff;color:#18213c;border:0;border-radius:50%;font-size:1.5rem;box-shadow:0 4px 16px #0005}
+.focus-close:hover{background:#f1edff}
+.focus-tip{position:absolute;left:12px;top:13px;z-index:10;background:#fff;color:#37317e;font-size:.72rem;font-weight:800;padding:7px 11px;border-radius:999px;box-shadow:0 3px 10px #0002}
+body.focus-open{overflow:hidden}
+.shell-badge{position:absolute;top:15px;right:16px;z-index:3;display:flex;align-items:center;gap:7px;padding:7px 12px;border-radius:12px;background:#fff;color:#d72027;font-size:1.1rem;font-weight:900;box-shadow:0 4px 14px #0004;letter-spacing:-.04em}
+.shell-badge .shell-icon{font-size:1.35rem;color:#f6bd19;text-shadow:1px 1px #d72027,-1px -1px #d72027}
+@keyframes fadein{from{opacity:0}to{opacity:1}}@keyframes popin{from{opacity:.5;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@media(max-width:575.98px){.focus-backdrop{padding:12px}.focus-frame{max-height:88dvh}.focus-frame .market-card .photo{height:160px}.focus-frame .panel .panel-photo{height:145px}.focus-frame .market-card .card-num{font-size:2.15rem}.focus-frame .market-card{padding-bottom:24px}.focus-frame .rate-row{font-size:.9rem}.shell-badge{top:9px;right:10px;font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){.focus-backdrop,.focus-frame{animation:none}}
+/* Shell: landscape forecourt photo, cropped deliberately to keep the canopy logo visible.
+   Never letterbox or stretch the image. */
+.panel.petrol .panel-photo{
+  display:block;width:calc(100% + 44px);height:250px;
+  object-fit:cover;object-position:50% 20%;
+  background:#e5edf4;opacity:1;
+}
+@media(max-width:575.98px){
+ .panel.petrol .panel-photo{width:calc(100% + 28px);height:185px;object-position:50% 18%}
+}
+.focus-frame .panel.petrol .panel-photo{height:260px;object-fit:cover;object-position:50% 18%;background:#e5edf4}
+@media(max-width:575.98px){.focus-frame .panel.petrol .panel-photo{height:195px}}
+.panel.petrol .shell-badge,.focus-frame .shell-badge{display:none!important}
+</style></head><body><main class="container app py-4"><header class="mast p-4 p-md-5 mb-4"><img class="hero-photo" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1000&q=85" alt="" loading="lazy" onerror="this.style.display='none'"><div class="d-flex align-items-center topline gap-3"><span class="brand-mark"><i class="bi bi-grid-1x2-fill"></i></span><div><div style="font-size:.67rem;letter-spacing:.16em;font-weight:750;color:#dedbff">YOUR DAILY MARKET SNAPSHOT</div><h1 class="mb-0">Quick Dashboard <span style="color:#f8ce71">✦</span></h1></div></div><div class="d-flex justify-content-between align-items-end gap-2 flex-wrap bottomline mt-4"><div><p class="mb-1">Markets · Currency · Precious metals · Fuel</p><div class="state"><span id="dot" class="dot"></span><span id="status">Loading prices…</span></div><div id="updated" class="statusline mt-1">Not updated yet</div></div><button id="refresh" class="btn btn-refresh"><i class="bi bi-arrow-clockwise me-1"></i> Refresh</button></div></header>
+<div class="section-label mb-2">At a glance</div><div class="row g-3 mb-4"><div class="col-6 col-lg-4"><article class="market-card sensex"><img class="photo" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="d-flex align-items-center justify-content-between gap-1"><span class="iconbox"><i class="bi bi-graph-up-arrow"></i></span><span class="chip">BSE</span></div><div class="card-label mt-3">SENSEX</div><div class="card-num mt-1 accent-value" id="sensex">—</div><div class="card-detail mt-1" id="sensexChange">Loading…</div><div class="tiny mt-2" id="sensexSource">Latest market quote</div></article></div><div class="col-6 col-lg-4"><article class="market-card fx"><img class="photo" src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="d-flex align-items-center justify-content-between gap-1"><span class="iconbox"><i class="bi bi-currency-exchange"></i></span><span class="chip">MYR / INR</span></div><div class="card-label mt-3">1 MYR IN INR</div><div class="card-num mt-1 accent-value" id="fx">—</div><div class="card-detail mt-1">Malaysian ringgit to rupees</div><div class="tiny mt-2" id="fxSource">Reference exchange rate</div></article></div><div class="col-6 col-lg-4"><article class="market-card gold"><img class="photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="d-flex align-items-center justify-content-between gap-1"><span class="iconbox"><i class="bi bi-gem"></i></span><span class="chip">24K · 1g</span></div><div class="card-label mt-3">MALAYSIA GOLD</div><div class="card-num mt-1 accent-value" id="myGold">—</div><div class="card-detail mt-1">Indicative spot · RM / gram</div><div class="tiny mt-2" id="goldSource">Gold spot estimate</div></article></div></div>
+<div class="section-label mb-2">Prices & rates</div><div class="row g-3 mb-3"><div class="col-12 col-md-6"><section class="panel gold"><img class="panel-photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-stars me-2"></i>Malaysia Gold</h2><span class="chip">RM / gram</span></div><div class="rate-row"><span>24K Gold</span><strong id="my24">—</strong></div><div class="rate-row"><span>22K Gold</span><strong id="my22">—</strong></div><div class="rate-row"><span>18K Gold</span><strong id="my18">—</strong></div><div class="note">Indicative metal value, excluding retail premiums.</div></section></div><div class="col-12 col-md-6"><section class="panel indiametal"><img class="panel-photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-coin me-2"></i>India Gold & Silver</h2><span class="chip">INR</span></div><div class="rate-row"><span>Gold 24K · 1 gram</span><strong id="in24">—</strong></div><div class="rate-row"><span>Gold 22K · 10 grams</span><strong id="in22">—</strong></div><div class="rate-row"><span>Silver · 1 gram</span><strong id="silverGram">—</strong></div><div class="rate-row"><span>Silver · 1 kilogram</span><strong id="silverKg">—</strong></div><div class="note">Indicative spot conversions, not jeweller prices.</div></section></div><div class="col-12"><section class="panel petrol"><img class="panel-photo" src="https://www.vivaenergy.com.au/images/carousel/006596df-0e5d-4458-a838-6048f4948aae_Who_are_you_banner_2.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-fuel-pump-fill me-2"></i>Malaysia Petrol & Diesel</h2><span class="chip">RM / litre</span></div><div class="row gx-4"><div class="col-12 col-md-6"><div class="rate-row"><span>RON95 · BUDI95</span><strong id="ron95">—</strong></div><div class="rate-row"><span>RON95 · Unsubsidised</span><strong id="ron95u">—</strong></div></div><div class="col-12 col-md-6"><div class="rate-row"><span>RON97</span><strong id="ron97">—</strong></div><div class="rate-row"><span>Diesel · Peninsular</span><strong id="diesel">—</strong></div></div></div><div class="note" id="fuelSource">Checking latest weekly government prices…</div></section></div></div><footer class="footer">Quick Dashboard · Refreshes when opened and every 5 minutes · Rates may be delayed</footer></main><div class="focus-backdrop" id="focusBackdrop" role="dialog" aria-modal="true" aria-label="Expanded dashboard information" aria-hidden="true"><div class="focus-frame" id="focusFrame"><span class="focus-tip"><i class="bi bi-arrows-angle-expand me-1"></i> Focus view</span><button type="button" class="focus-close" id="focusClose" aria-label="Close expanded view"><i class="bi bi-x-lg"></i></button><div id="focusContent"></div></div></div><script>
+const $=id=>document.getElementById(id), fmt=(n,c,d=2)=>Number.isFinite(n)?new Intl.NumberFormat('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}).format(n):'—';let busy=false;const TROY=31.1034768;const set=(id,value)=>$(id).textContent=value;async function json(url){const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return r.json()};async function fx(){let j=await json('https://api.frankfurter.dev/v1/latest?base=MYR&symbols=INR,USD');if(!j.rates?.INR||!j.rates?.USD)throw Error('FX rates unavailable');set('fx','₹ '+fmt(j.rates.INR,4));set('fxSource','Frankfurter reference rate · '+(j.date||'latest'));return {inr:j.rates.INR,usdPerMyr:j.rates.USD}}async function spot(){// Free public quote endpoint; availability varies by browser and provider.
+const j=await json('https://api.gold-api.com/price/XAU');if(!Number.isFinite(Number(j.price)))throw Error('Gold quote missing');let silver=null;try{const s=await json('https://api.gold-api.com/price/XAG');silver=Number(s.price)}catch(e){}return {gold:Number(j.price),silver:Number.isFinite(silver)?silver:null,updated:j.updatedAt||''}}
+async function sensex(){
+ const endpoint='https://query1.finance.yahoo.com/v8/finance/chart/%5EBSESN?interval=1d&range=5d';
+ const sources=[['Yahoo Finance (browser)',endpoint],['Yahoo Finance via CORS proxy','https://proxy.cors.dev/'+endpoint]];
+ let lastError='No quote returned';
+ for(const [source,url] of sources){
+  try{
+   const j=await json(url);const m=j.chart?.result?.[0]?.meta;
+   if(!m||!Number.isFinite(m.regularMarketPrice))throw Error('No valid index value');
+   set('sensex',fmt(m.regularMarketPrice,2));
+   const prev=m.chartPreviousClose||m.previousClose;
+   if(prev){const diff=m.regularMarketPrice-prev,pct=diff/prev*100;
+    set('sensexChange',(diff>=0?'▲ +':'▼ ')+fmt(diff)+' ('+(diff>=0?'+':'')+fmt(pct)+'%)');
+    $('sensexChange').style.color=diff>=0?'#55d6ad':'#ff8494';
+   }else set('sensexChange','Latest available quote');
+   set('sensexSource',source+' · may be delayed · '+(m.regularMarketTime?new Date(m.regularMarketTime*1000).toLocaleString('en-IN',{timeZone:'Asia/Kolkata'})+' IST':'time unknown'));
+   return;
+  }catch(e){lastError=e.message}
+ }
+ throw Error('Sensex quote unavailable ('+lastError+'). Public feeds may restrict access');
+}
+async function fuel(){
+ const url='https://storage.data.gov.my/commodities/fuelprice.csv';
+ let rows=[];
+ try {
+  const r=await fetch(url+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);
+  const csv=await r.text();const lines=csv.trim().split(/\r?\n/);const keys=lines.shift().replace(/^\uFEFF/,'').split(',').map(x=>x.trim().replace(/^"|"$/g,''));
+  rows=lines.map(line=>{const parts=line.split(',');return Object.fromEntries(keys.map((k,i)=>[k,(parts[i]||'').trim().replace(/^"|"$/g,'')]))});
+ }catch(err){
+  const j=await json('https://api.data.gov.my/data-catalogue?id=fuelprice&limit=1000');
+  rows=Array.isArray(j)?j:(j.data||[]);
+ }
+ const today=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Kuala_Lumpur'});
+ const valid=rows.filter(x=>x.series_type==='level'&&x.date&&x.date<=today).sort((a,b)=>b.date.localeCompare(a.date));
+ if(!valid.length)throw Error('No current official fuel data');
+ const v=valid[0];const num=x=>Number.isFinite(Number(x))&&x!==''?'RM '+Number(x).toFixed(2):'—';
+ set('ron95',num(v.ron95_budi95));set('ron95u',num(v.ron95));set('ron97',num(v.ron97));set('diesel',num(v.diesel));
+ set('fuelSource','Official data.gov.my · effective '+v.date+' · values shown are weekly.');
+}
+async function refresh(){if(busy)return;busy=true;$('refresh').disabled=true;$('refresh').innerHTML='<span class="spinner-border me-2"></span>Refreshing';$('dot').className='dot';set('status','Fetching market data…');let errors=[];const results=await Promise.allSettled([fx(),spot(),sensex(),fuel()]);const f=results[0].status==='fulfilled'?results[0].value:null;const s=results[1].status==='fulfilled'?results[1].value:null;results.forEach((r,i)=>{if(r.status==='rejected')errors.push(['Currency','Metals','Sensex','Fuel'][i]+': '+r.reason.message)});if(f&&s){let usdToMyr=1/f.usdPerMyr,usdToInr=f.inr/f.usdPerMyr,gMyr=s.gold/TROY*usdToMyr,gInr=s.gold/TROY*usdToInr;set('myGold','RM '+fmt(gMyr));set('my24','RM '+fmt(gMyr));set('my22','RM '+fmt(gMyr*22/24));set('my18','RM '+fmt(gMyr*.75));set('in24','₹ '+fmt(gInr));set('in22','₹ '+fmt(gInr*22/24*10));if(s.silver!==null){set('silverGram','₹ '+fmt(s.silver/TROY*usdToInr));set('silverKg','₹ '+fmt(s.silver/TROY*usdToInr*1000))}set('goldSource','XAU spot converted using Frankfurter FX · '+(s.updated||'latest'))}else{['myGold','my24','my22','my18','in24','in22','silverGram','silverKg'].forEach(id=>set(id,'—'))}if(results[3].status==='rejected')set('fuelSource','Official feed unavailable — retry Refresh all.');if(!f)set('fx','—');if(results[2].status==='rejected'){set('sensex','—');set('sensexChange','Quote temporarily unavailable')}set('updated','Checked '+new Date().toLocaleString('en-MY',{dateStyle:'medium',timeStyle:'medium'}));set('status',errors.length?('Updated with '+errors.length+' feed issue'+(errors.length>1?'s':'')):'Available feeds updated');$('dot').className='dot '+(errors.length?'bad':'ok');$('refresh').disabled=false;$('refresh').innerHTML='<i class="bi bi-arrow-clockwise me-1"></i> Refresh all';busy=false}
+$('refresh').addEventListener('click',refresh);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh()});setInterval(()=>{if(!document.hidden)refresh()},300000);refresh();
+
+// One-at-a-time card focus. The displayed copy tracks live refreshes.
+const focusBackdrop=document.getElementById('focusBackdrop');
+const focusContent=document.getElementById('focusContent');
+const focusClose=document.getElementById('focusClose');
+let focusedCard=null,focusObserver=null,lastFocused=null;
+function syncFocus(){
+ if(!focusedCard)return;
+ const clone=focusedCard.cloneNode(true);
+ clone.removeAttribute('tabindex');clone.removeAttribute('role');
+ clone.querySelectorAll('[id]').forEach(node=>node.removeAttribute('id'));
+ clone.querySelectorAll('[tabindex]').forEach(node=>node.removeAttribute('tabindex'));
+ focusContent.replaceChildren(clone);
+}
+function openFocus(card){
+ if(focusedCard===card)return;
+ if(focusObserver)focusObserver.disconnect();
+ focusedCard=card;lastFocused=document.activeElement;
+ syncFocus();
+ focusBackdrop.classList.add('active');focusBackdrop.setAttribute('aria-hidden','false');
+ document.body.classList.add('focus-open');focusClose.focus();
+ focusObserver=new MutationObserver(syncFocus);
+ focusObserver.observe(card,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['style','class']});
+}
+function closeFocus(){
+ if(focusObserver)focusObserver.disconnect();focusObserver=null;focusedCard=null;
+ focusBackdrop.classList.remove('active');focusBackdrop.setAttribute('aria-hidden','true');
+ document.body.classList.remove('focus-open');focusContent.replaceChildren();
+ if(lastFocused?.focus)lastFocused.focus();
+}
+document.querySelectorAll('main .market-card,main .panel').forEach(card=>{
+ card.tabIndex=0;card.setAttribute('role','button');
+ card.setAttribute('aria-label','Expand '+(card.querySelector('h2,.card-label')?.textContent||'information'));
+ card.addEventListener('click',()=>openFocus(card));
+ card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openFocus(card)}});
+});
+focusClose.addEventListener('click',closeFocus);
+focusBackdrop.addEventListener('click',e=>{if(e.target===focusBackdrop)closeFocus()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&focusedCard)closeFocus()});
+</script></body></html>
