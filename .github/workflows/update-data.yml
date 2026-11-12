@@ -1,16 +1,29 @@
-
-name: Schedule Trigger Test
-
+name: Refresh dashboard market data
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
-
+  schedule:
+    - cron: '*/15 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: dashboard-data
+  cancel-in-progress: false
 jobs:
-  test:
+  update:
     runs-on: ubuntu-latest
     steps:
-      - name: Confirm scheduled trigger
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4
+      - run: python scripts/update_market.py
+      - name: Save latest retrieved values
         run: |
-          echo "Trigger: ${{ github.event_name }}"
-          date -u
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add market-data.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh market data'
+            git push
+          fi
