@@ -232,19 +232,5 @@ for key in ('sensex','fx','fuel','gold_my','gold_in','silver_in'):
   entry=old['values'][key]
   if isinstance(entry,dict) and entry.get('asof') and not entry.get('stale'):
    result['values'][key]={**entry,'stale':True}
-# Publish only when meaningful market data changes. Collection timestamps and
-# transient scrape errors alone should not cause a new Pages deployment.
-def comparable_values(data):
- values = data.get('values', {})
- return {
-  key: {field: value for field, value in entry.items() if field != 'asof'}
-  if isinstance(entry, dict) else entry
-  for key, entry in values.items()
- }
-
-if comparable_values(result) == comparable_values(old) and OUT.exists():
- print('Market values unchanged; keeping existing JSON and skipping deployment.')
-else:
- OUT.write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
- print('Market values changed; updated market-data.json.')
-print('Retrieved:', list(result['values']), 'Errors:', result['errors'])
+OUT.write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+print('Retrieved:',list(result['values']),'Errors:',result['errors'])
