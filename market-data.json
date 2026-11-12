@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-11-12T15:42:24.060049+00:00",
+  "values": {
+    "sensex": {
+      "value": {
+        "price": 81911.01,
+        "change": 31.61,
+        "pct": 0.04
+      },
+      "source": "BSE India official Sensex quote",
+      "asof": "2026-11-12T16:00:00+05:30",
+      "url": "https://www.bseindia.com/"
+    },
+    "fx": {
+      "value": {
+        "inr": 23.0557,
+        "usd_per_myr": null
+      },
+      "source": "XE MYR to INR displayed mid-market quote",
+      "asof": "2026-11-12T15:42:24.885681+00:00",
+      "url": "https://www.xe.com/currencyconverter/convert/?Amount=1&From=MYR&To=INR"
+    },
+    "gold_my": {
+      "value": {
+        "k24": 537.0,
+        "k22": 502.0,
+        "k18": 410.7
+      },
+      "source": "Goodreturns Malaysia indicative gold rates",
+      "asof": "2026-11-12",
+      "url": "https://www.goodreturns.in/gold-rates/malaysia.html"
+    },
+    "gold_in": {
+      "value": {
+        "k24": 13980.0,
+        "k22": 12815.0
+      },
+      "source": "Goodreturns Vijayawada indicative gold rates",
+      "asof": "2026-11-12",
+      "url": "https://www.goodreturns.in/gold-rates/vijayawada.html"
+    },
+    "silver_in": {
+      "value": {
+        "gram": 200.0,
+        "kg": 200000.0
+      },
+      "source": "Goodreturns Vijayawada indicative silver rates",
+      "asof": "2026-11-12",
+      "url": "https://www.goodreturns.in/silver-rates/vijayawada.html"
+    },
+    "fuel": {
+      "value": {
+        "ron95_budi95": 1.99,
+        "ron95": 3.87,
+        "ron97": 4.2,
+        "diesel": 4.87
+      },
+      "source": "Malaysia government official fuel price schedule",
+      "asof": "2026-11-12",
+      "url": "https://data.gov.my/data-catalogue/fuelprice"
+    }
+  },
+  "errors": {}
+}
