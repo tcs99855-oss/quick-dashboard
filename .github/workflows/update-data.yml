@@ -1,29 +1,47 @@
+
 name: Refresh dashboard market data
+
+run-name: "Dashboard Refresh - ${{ inputs.request_id }}"
+
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '*/15 * * * *'
+    inputs:
+      request_id:
+        description: "Dashboard refresh request ID"
+        required: false
+        type: string
+
 permissions:
   contents: write
-concurrency:
-  group: dashboard-data
-  cancel-in-progress: false
+  actions: read
+
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - run: pip install requests beautifulsoup4
-      - run: python scripts/update_market.py
-      - name: Save latest retrieved values
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: python -m pip install requests beautifulsoup4
+
+      - name: Retrieve market prices
+        run: python scripts/update_market.py
+
+      - name: Commit updated market data
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add market-data.json
+
           if ! git diff --cached --quiet; then
-            git commit -m 'Refresh market data'
+            git commit -m "Update market data"
             git push
           fi
