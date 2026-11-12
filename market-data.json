@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T16:40:13.911081+00:00",
+  "generated_at": "2026-11-12T19:08:43.613652+00:00",
   "values": {
     "sensex": {
       "value": {
@@ -17,7 +17,7 @@
         "usd_per_myr": null
       },
       "source": "XE MYR to INR displayed mid-market quote",
-      "asof": "2026-11-12T16:40:14.520882+00:00",
+      "asof": "2026-11-12T19:08:44.502010+00:00",
       "url": "https://www.xe.com/currencyconverter/convert/?Amount=1&From=MYR&To=INR"
     },
     "gold_my": {
@@ -27,7 +27,7 @@
         "k18": 410.7
       },
       "source": "Goodreturns Malaysia indicative gold rates",
-      "asof": "2026-11-12",
+      "asof": "2026-11-13",
       "url": "https://www.goodreturns.in/gold-rates/malaysia.html"
     },
     "gold_in": {
@@ -36,7 +36,7 @@
         "k22": 12815.0
       },
       "source": "Goodreturns Vijayawada indicative gold rates",
-      "asof": "2026-11-12",
+      "asof": "2026-11-13",
       "url": "https://www.goodreturns.in/gold-rates/vijayawada.html"
     },
     "silver_in": {
@@ -45,7 +45,7 @@
         "kg": 200000.0
       },
       "source": "Goodreturns Vijayawada indicative silver rates",
-      "asof": "2026-11-12",
+      "asof": "2026-11-13",
       "url": "https://www.goodreturns.in/silver-rates/vijayawada.html"
     },
     "fuel": {
