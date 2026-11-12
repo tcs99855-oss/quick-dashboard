@@ -3,7 +3,7 @@ name: Refresh dashboard market data
 
 on:
   schedule:
-    - cron: '7,22,37,52 * * * *'
+    - cron: '9,24,39,54 * * * *'
   workflow_dispatch:
 
 permissions:
