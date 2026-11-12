@@ -99,7 +99,7 @@ body.focus-open{overflow:hidden}
 @media(max-width:575.98px){.btn-live{padding:8px 11px;font-size:.76rem}.live-dialog{padding:23px}.live-actions{width:100%}}
 </style></head><body><main class="container app py-4"><header class="mast p-4 p-md-5 mb-4"><img class="hero-photo" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1000&q=85" alt="" loading="lazy" onerror="this.style.display='none'"><div class="d-flex align-items-center topline gap-3"><span class="brand-mark"><i class="bi bi-grid-1x2-fill"></i></span><div><div style="font-size:.67rem;letter-spacing:.16em;font-weight:750;color:#dedbff">YOUR DAILY MARKET SNAPSHOT</div><h1 class="mb-0">Quick Dashboard <span style="color:#f8ce71">✦</span></h1></div></div><div class="d-flex justify-content-between align-items-end gap-2 flex-wrap bottomline mt-4"><div><p class="mb-1">Markets · Currency · Precious metals · Fuel</p><div class="state"><span id="dot" class="dot"></span><span id="status">Loading prices…</span></div><div id="updated" class="statusline mt-1">Not updated yet</div></div><div class="live-actions"><button id="liveUpdate" type="button" class="btn btn-live"><i class="bi bi-lightning-charge-fill me-1"></i> Update Live Data</button><button id="refresh" class="btn btn-refresh"><i class="bi bi-arrow-clockwise me-1"></i> Refresh</button></div></div></header>
 <div class="section-label mb-2">At a glance</div><div class="row g-3 mb-4"><div class="col-6 col-lg-4"><article class="market-card sensex"><img class="photo" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="d-flex align-items-center justify-content-between gap-1"><span class="iconbox"><i class="bi bi-graph-up-arrow"></i></span><span class="chip">BSE</span></div><div class="card-label mt-3">SENSEX</div><div class="card-num mt-1 accent-value" id="sensex">—</div><div class="card-detail mt-1" id="sensexChange">Loading…</div><div class="tiny mt-2" id="sensexSource">BSE India official quote</div></article></div><div class="col-6 col-lg-4"><article class="market-card fx"><img class="photo" src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="d-flex align-items-center justify-content-between gap-1"><span class="iconbox"><i class="bi bi-currency-exchange"></i></span><span class="chip">MYR / INR</span></div><div class="card-label mt-3">1 MYR IN INR</div><div class="card-num mt-1 accent-value" id="fx">—</div><div class="card-detail mt-1">Malaysian ringgit to rupees</div><div class="tiny mt-2" id="fxSource">XE mid-market exchange rate</div></article></div><div class="col-6 col-lg-4"><article class="market-card gold"><img class="photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="d-flex align-items-center justify-content-between gap-1"><span class="iconbox"><i class="bi bi-gem"></i></span><span class="chip">24K · 1g</span></div><div class="card-label mt-3">MALAYSIA GOLD</div><div class="card-num mt-1 accent-value" id="myGold">—</div><div class="card-detail mt-1">Goodreturns Malaysia · RM / gram</div><div class="tiny mt-2" id="goldSource">Goodreturns Malaysia · indicative</div></article></div></div>
-<div class="section-label mb-2">Prices & rates</div><div class="row g-3 mb-3"><div class="col-12 col-md-6"><section class="panel gold"><img class="panel-photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-stars me-2"></i>Malaysia Gold</h2><span class="chip">RM / gram</span></div><div class="rate-row"><span>24K Gold</span><strong id="my24">—</strong></div><div class="rate-row"><span>22K Gold</span><strong id="my22">—</strong></div><div class="rate-row"><span>18K Gold</span><strong id="my18">—</strong></div><div class="note">Goodreturns indicative rates; jeweller checkout prices may differ. <a href="https://www.goodreturns.in/gold-rates/malaysia.html" target="_blank" rel="noopener noreferrer">View live rates on Goodreturns ↗</a></div></section></div><div class="col-12 col-md-6"><section class="panel indiametal"><img class="panel-photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-coin me-2"></i>India Gold & Silver</h2><span class="chip">INR</span></div><div class="rate-row"><span>Gold 24K · 1 gram</span><strong id="in24">—</strong></div><div class="rate-row"><span>Gold 22K · 10 grams</span><strong id="in22">—</strong></div><div class="rate-row"><span>Silver · 1 gram</span><strong id="silverGram">—</strong></div><div class="rate-row"><span>Silver · 1 kilogram</span><strong id="silverKg">—</strong></div><div class="note">Goodreturns Vijayawada indicative rates; jewellery taxes and making charges may differ. <a href="https://www.goodreturns.in/gold-rates/vijayawada.html" target="_blank" rel="noopener noreferrer">Gold ↗</a> · <a href="https://www.goodreturns.in/silver-rates/vijayawada.html" target="_blank" rel="noopener noreferrer">Silver ↗</a></div></section></div><div class="col-12"><section class="panel petrol"><img class="panel-photo" src="https://www.vivaenergy.com.au/images/carousel/006596df-0e5d-4458-a838-6048f4948aae_Who_are_you_banner_2.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-fuel-pump-fill me-2"></i>Malaysia Petrol & Diesel</h2><span class="chip">RM / litre</span></div><div class="row gx-4"><div class="col-12 col-md-6"><div class="rate-row"><span>RON95 · BUDI95</span><strong id="ron95">—</strong></div><div class="rate-row"><span>RON95 · Unsubsidised</span><strong id="ron95u">—</strong></div></div><div class="col-12 col-md-6"><div class="rate-row"><span>RON97</span><strong id="ron97">—</strong></div><div class="rate-row"><span>Diesel · Peninsular</span><strong id="diesel">—</strong></div></div></div><div class="note" id="fuelSource">Checking latest weekly government prices…</div></section></div></div><footer class="footer">Quick Dashboard · Reads latest collected data when opened and every 5 minutes · Some sites may block browser access</footer></main><div class="focus-backdrop" id="focusBackdrop" role="dialog" aria-modal="true" aria-label="Expanded dashboard information" aria-hidden="true"><div class="focus-frame" id="focusFrame"><span class="focus-tip"><i class="bi bi-arrows-angle-expand me-1"></i> Focus view</span><button type="button" class="focus-close" id="focusClose" aria-label="Close expanded view"><i class="bi bi-x-lg"></i></button><div id="focusContent"></div></div></div><div class="live-overlay" id="liveOverlay" role="dialog" aria-modal="true" aria-label="Update live market data" aria-hidden="true"><div class="live-dialog"><button type="button" class="live-x" id="liveClose" aria-label="Close"><i class="bi bi-x-lg"></i></button><div class="live-emblem"><i class="bi bi-lightning-charge-fill"></i></div><h2 class="live-title">Update Live Data</h2><p class="live-desc">Securely request a fresh market-data collection without leaving the dashboard.</p><div class="live-status" id="liveStatus" role="status">Enter your shared access code to request a new update.</div><label for="liveCode" class="card-label d-block mb-2">SHARED ACCESS CODE</label><input id="liveCode" class="live-code" type="password" autocomplete="off" placeholder="Enter access code" maxlength="256"><button type="button" class="live-run" id="liveRun"><i class="bi bi-play-circle-fill me-2"></i>Run Workflow</button><div class="live-foot">After the workflow finishes, close this panel and refresh the dashboard.</div></div></div><script>
+<div class="section-label mb-2">Prices & rates</div><div class="row g-3 mb-3"><div class="col-12 col-md-6"><section class="panel gold"><img class="panel-photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-stars me-2"></i>Malaysia Gold</h2><span class="chip">RM / gram</span></div><div class="rate-row"><span>24K Gold</span><strong id="my24">—</strong></div><div class="rate-row"><span>22K Gold</span><strong id="my22">—</strong></div><div class="rate-row"><span>18K Gold</span><strong id="my18">—</strong></div><div class="note">Goodreturns indicative rates; jeweller checkout prices may differ. <a href="https://www.goodreturns.in/gold-rates/malaysia.html" target="_blank" rel="noopener noreferrer">View live rates on Goodreturns ↗</a></div></section></div><div class="col-12 col-md-6"><section class="panel indiametal"><img class="panel-photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-coin me-2"></i>India Gold & Silver</h2><span class="chip">INR</span></div><div class="rate-row"><span>Gold 24K · 1 gram</span><strong id="in24">—</strong></div><div class="rate-row"><span>Gold 22K · 10 grams</span><strong id="in22">—</strong></div><div class="rate-row"><span>Silver · 1 gram</span><strong id="silverGram">—</strong></div><div class="rate-row"><span>Silver · 1 kilogram</span><strong id="silverKg">—</strong></div><div class="note">Goodreturns Vijayawada indicative rates; jewellery taxes and making charges may differ. <a href="https://www.goodreturns.in/gold-rates/vijayawada.html" target="_blank" rel="noopener noreferrer">Gold ↗</a> · <a href="https://www.goodreturns.in/silver-rates/vijayawada.html" target="_blank" rel="noopener noreferrer">Silver ↗</a></div></section></div><div class="col-12"><section class="panel petrol"><img class="panel-photo" src="https://www.vivaenergy.com.au/images/carousel/006596df-0e5d-4458-a838-6048f4948aae_Who_are_you_banner_2.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-fuel-pump-fill me-2"></i>Malaysia Petrol & Diesel</h2><span class="chip">RM / litre</span></div><div class="row gx-4"><div class="col-12 col-md-6"><div class="rate-row"><span>RON95 · BUDI95</span><strong id="ron95">—</strong></div><div class="rate-row"><span>RON95 · Unsubsidised</span><strong id="ron95u">—</strong></div></div><div class="col-12 col-md-6"><div class="rate-row"><span>RON97</span><strong id="ron97">—</strong></div><div class="rate-row"><span>Diesel · Peninsular</span><strong id="diesel">—</strong></div></div></div><div class="note" id="fuelSource">Checking latest weekly government prices…</div></section></div></div><footer class="footer">Quick Dashboard · Reads latest collected data when opened and every 5 minutes · Some sites may block browser access</footer></main><div class="focus-backdrop" id="focusBackdrop" role="dialog" aria-modal="true" aria-label="Expanded dashboard information" aria-hidden="true"><div class="focus-frame" id="focusFrame"><span class="focus-tip"><i class="bi bi-arrows-angle-expand me-1"></i> Focus view</span><button type="button" class="focus-close" id="focusClose" aria-label="Close expanded view"><i class="bi bi-x-lg"></i></button><div id="focusContent"></div></div></div><div class="live-overlay" id="liveOverlay" role="dialog" aria-modal="true" aria-label="Update live market data" aria-hidden="true"><div class="live-dialog"><button type="button" class="live-x" id="liveClose" aria-label="Close"><i class="bi bi-x-lg"></i></button><div class="live-emblem"><i class="bi bi-lightning-charge-fill"></i></div><h2 class="live-title">Update Live Data</h2><p class="live-desc">Run the collector and track its completion without leaving the dashboard.</p><div class="live-status" id="liveStatus" role="status">Click Run Workflow to request the latest market data.</div><button type="button" class="live-run" id="liveRun"><i class="bi bi-play-circle-fill me-2"></i>Run Workflow</button><div class="live-foot">After a successful run, the dashboard refreshes automatically.</div></div></div><script>
 const $=id=>document.getElementById(id);
 const fmt=(n,d=2)=>Number.isFinite(Number(n))?Number(n).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}):'—';
 const set=(id,v)=>{const e=$(id);if(e)e.textContent=v};
@@ -173,34 +173,91 @@ focusBackdrop.addEventListener('click',e=>{if(e.target===focusBackdrop)closeFocu
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&focusedCard)closeFocus()});
 
 
-// Secure trigger endpoint must be implemented separately (e.g. a serverless function).
-// Never place a GitHub personal access token in this public HTML file.
-const LIVE_TRIGGER_ENDPOINT = 'https://quick-dashboard-trigger.tcs99855.workers.dev/run';
+// GitHub token remains only in the Cloudflare Worker; never place it in this HTML.
+const LIVE_WORKER = 'https://quick-dashboard-trigger.tcs99855.workers.dev';
 const liveOverlay = document.getElementById('liveOverlay');
 const liveRun = document.getElementById('liveRun');
 const liveStatus = document.getElementById('liveStatus');
 const liveClose = document.getElementById('liveClose');
 const liveUpdate = document.getElementById('liveUpdate');
-function closeLive(){liveOverlay.classList.remove('active');liveOverlay.setAttribute('aria-hidden','true');document.body.classList.remove('focus-open');liveUpdate.focus()}
-liveUpdate.addEventListener('click',()=>{liveOverlay.classList.add('active');liveOverlay.setAttribute('aria-hidden','false');document.body.classList.add('focus-open');liveClose.focus()});
+let trackingActive = false;
+let trackingId = null;
+function closeLive(){
+ liveOverlay.classList.remove('active');
+ liveOverlay.setAttribute('aria-hidden','true');
+ document.body.classList.remove('focus-open');
+ liveUpdate.focus();
+}
+liveUpdate.addEventListener('click',()=>{
+ liveOverlay.classList.add('active');
+ liveOverlay.setAttribute('aria-hidden','false');
+ document.body.classList.add('focus-open');
+ liveClose.focus();
+});
 liveClose.addEventListener('click',closeLive);
 liveOverlay.addEventListener('click',e=>{if(e.target===liveOverlay)closeLive()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&liveOverlay.classList.contains('active'))closeLive()});
+const wait = ms => new Promise(resolve=>setTimeout(resolve,ms));
+async function workerJSON(url,options={}) {
+ const controller = new AbortController();
+ const timeout = setTimeout(()=>controller.abort(),12000);
+ try {
+  const response = await fetch(url,{...options,cache:'no-store',signal:controller.signal});
+  let data={};
+  try{data=await response.json()}catch{}
+  if(!response.ok)throw new Error(data.message||('HTTP '+response.status));
+  return data;
+ } finally {clearTimeout(timeout)}
+}
 liveRun.addEventListener('click',async()=>{
- const code=document.getElementById('liveCode').value;
- if(!code){liveStatus.textContent='Please enter your shared access code.';return;}
- liveRun.disabled=true;liveStatus.textContent='Sending request to GitHub Actions…';
- try{
-  const response=await fetch(LIVE_TRIGGER_ENDPOINT,{
-   method:'POST',headers:{'Content-Type':'application/json'},
-   body:JSON.stringify({code})
-  });
-  let result={};try{result=await response.json()}catch{}
-  if(!response.ok)throw new Error(result.message||('HTTP '+response.status));
-  liveStatus.textContent='GitHub accepted the workflow request. This does not mean it has finished. Wait for the run to complete, then refresh the dashboard.';
-  document.getElementById('liveCode').value='';
- }catch(e){
-  liveStatus.textContent='Could not start workflow: '+e.message+(location.hostname==='localhost'||location.hostname==='127.0.0.1'?' (Local testing requires allowing localhost in the Cloudflare Worker CORS settings.)':'');
- }finally{liveRun.disabled=false}
+ if(trackingActive)return;
+ trackingActive=true;
+ liveRun.disabled=true;
+ liveRun.textContent='Tracking workflow…';
+ liveStatus.textContent='Sending request to GitHub Actions…';
+ try {
+  const started=await workerJSON(LIVE_WORKER+'/run',{method:'POST'});
+  if(!started.request_id)throw new Error('Worker did not return a tracking ID. Deploy the new Worker script.');
+  trackingId=started.request_id;
+  liveStatus.textContent='Workflow requested. Waiting for GitHub to start…';
+  const deadline=Date.now()+8*60*1000;
+  let lastError=null;
+  while(Date.now()<deadline){
+   await wait(7000);
+   let state;
+   try{
+    state=await workerJSON(LIVE_WORKER+'/status?id='+encodeURIComponent(trackingId));
+    lastError=null;
+   }catch(error){
+    lastError=error;
+    liveStatus.textContent='Status check temporarily unavailable. Retrying…';
+    continue;
+   }
+   if(state.status==='pending'||state.status==='queued'){
+    liveStatus.textContent='Workflow queued. Waiting for a runner…';
+   }else if(state.status==='in_progress'){
+    liveStatus.textContent='Refreshing market data…';
+   }else if(state.status==='completed'){
+    if(state.conclusion==='success'){
+     liveStatus.textContent='✓ Refresh Completed Successfully! Loading updated prices…';
+     await refresh();
+     liveStatus.textContent='✓ Refresh Completed Successfully! Dashboard data reloaded.';
+    }else{
+     liveStatus.textContent='✕ Refresh failed ('+(state.conclusion||'unknown')+'). Check GitHub Actions.';
+    }
+    return;
+   }else{
+    liveStatus.textContent='Checking workflow status…';
+   }
+  }
+  liveStatus.textContent='Status tracking timed out after 8 minutes. '+(lastError?'Last error: '+lastError.message+'. ':'')+'Check GitHub Actions for the final result.';
+ }catch(error){
+  liveStatus.textContent='Could not start or track workflow: '+error.message;
+ }finally{
+  trackingActive=false;
+  trackingId=null;
+  liveRun.disabled=false;
+  liveRun.innerHTML='<i class="bi bi-play-circle-fill me-2"></i>Run Workflow';
+ }
 });
 </script></body></html>
