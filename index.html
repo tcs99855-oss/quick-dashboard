@@ -97,9 +97,68 @@ body.focus-open{overflow:hidden}
 .live-run:hover{filter:brightness(1.08)}.live-run:disabled{opacity:.55;cursor:not-allowed}
 .live-code{display:block;width:100%;padding:12px 14px;border:1px solid #d9def1;border-radius:12px;margin:0 0 12px;font-size:.95rem;outline-offset:2px}.live-code:focus{border-color:#7154dc;box-shadow:0 0 0 3px #7154dc22}.live-foot{font-size:.73rem;color:#8b94a7;margin-top:12px;text-align:center}
 @media(max-width:575.98px){.btn-live{padding:8px 11px;font-size:.76rem}.live-dialog{padding:23px}.live-actions{width:100%}}
-</style></head><body><main class="container app py-4"><header class="mast p-4 p-md-5 mb-4"><img class="hero-photo" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1000&q=85" alt="" loading="lazy" onerror="this.style.display='none'"><div class="d-flex align-items-center topline gap-3"><span class="brand-mark"><i class="bi bi-grid-1x2-fill"></i></span><div><div style="font-size:.67rem;letter-spacing:.16em;font-weight:750;color:#dedbff">YOUR DAILY MARKET SNAPSHOT</div><h1 class="mb-0">Quick Dashboard <span style="color:#f8ce71">✦</span></h1></div></div><div class="d-flex justify-content-between align-items-end gap-2 flex-wrap bottomline mt-4"><div><p class="mb-1">Markets · Currency · Precious metals · Fuel</p><div class="state"><span id="dot" class="dot"></span><span id="status">Loading prices…</span></div><div id="updated" class="statusline mt-1">Not updated yet</div></div><div class="live-actions"><button id="liveUpdate" type="button" class="btn btn-live"><i class="bi bi-lightning-charge-fill me-1"></i> Update Live Data</button><button id="refresh" class="btn btn-refresh"><i class="bi bi-arrow-clockwise me-1"></i> Refresh</button></div></div></header>
+/* Workflow progress: animated until GitHub reports completion */
+.live-progress{height:11px;border-radius:999px;background:#e5f3e9;overflow:hidden;margin:14px 0 5px;display:none}
+.live-progress.visible{display:block}
+.live-progress-fill{height:100%;width:38%;background:linear-gradient(90deg,#16a34a,#4ade80,#16a34a);border-radius:999px;animation:live-progress-move 1.7s ease-in-out infinite}
+.live-progress.done .live-progress-fill{width:100%;animation:none;background:#16a34a}
+.live-progress.failed .live-progress-fill{width:100%;animation:none;background:#dc3545}
+@keyframes live-progress-move{0%{transform:translateX(-110%)}100%{transform:translateX(275%)}}
+@media(prefers-reduced-motion:reduce){.live-progress-fill{animation-duration:4s}}
+
+/* Compact automatic workflow status */
+.live-overlay{padding:12px;background:rgba(12,22,48,.54)}
+.live-dialog{width:min(100%,390px);padding:22px 23px 19px;border-radius:22px;box-shadow:0 24px 65px #101a4066}
+.live-emblem{width:42px;height:42px;border-radius:13px;font-size:1.18rem;background:#eaf8ef;color:#16834b}
+.live-title{font-size:1.06rem;letter-spacing:-.02em;margin:12px 0 2px}
+.live-desc{font-size:.73rem;line-height:1.4;margin:0;color:#78839a}
+.live-status{border:0;background:transparent;padding:0;margin:15px 0 9px;font-size:.78rem;font-weight:700;color:#334155;line-height:1.4}
+.live-progress{display:block;height:8px;margin:9px 0 6px;background:#e5f3e9;overflow:hidden;border-radius:99px}
+.live-progress-fill{width:32%;height:100%;border-radius:99px;background:linear-gradient(90deg,#159447,#4ade80,#159447);animation:live-progress-move 1.6s ease-in-out infinite}
+.live-progress.done .live-progress-fill{width:100%;transform:none;animation:none;background:#16a34a}
+.live-progress.failed .live-progress-fill{width:100%;transform:none;animation:none;background:#dc3545}
+.live-step{font-size:.69rem;color:#8793a6;min-height:17px;margin:4px 0 11px}
+.live-run{font-size:.77rem;padding:10px 12px;border-radius:11px}
+.live-foot{font-size:.67rem;line-height:1.45;margin-top:10px}
+.live-x{right:17px;top:16px;width:29px;height:29px;font-size:.78rem}
+@media(max-width:575.98px){.live-dialog{padding:20px;width:min(100%,370px)}}
+
+/* Neon-lime workflow display, inspired by the supplied progress-bar reference */
+.live-overlay{background:rgba(7,12,12,.68);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.live-dialog{background:radial-gradient(circle at 95% 0%,rgba(161,247,31,.10),transparent 48%),#101510;color:#f3f8ee;border:1px solid #35452b;box-shadow:0 30px 90px #0009,0 0 0 1px #b9ff4d0c;border-radius:24px;padding:25px 25px 22px;width:min(100%,390px)}
+.live-emblem{width:46px;height:46px;border-radius:15px;background:#253b1d;color:#c8ff59;box-shadow:inset 0 0 0 1px #9cf53233;font-size:1.25rem}
+.live-title{color:#f5f9f1;font-size:1.12rem;font-weight:800;margin:14px 0 3px}
+.live-desc{color:#9cae94;font-size:.72rem;letter-spacing:.015em}
+.live-x{background:#273125;color:#d7e4d0;border:1px solid #41523b}
+.live-x:hover{background:#3a4932;color:#fff}
+.live-status{color:#eff9e5;font-size:.89rem;font-weight:750;margin:20px 0 12px}
+.live-progress{height:17px;border-radius:99px;background:#283327;box-shadow:inset 0 2px 6px #0007,0 0 0 1px #45563b;overflow:hidden;position:relative;margin:0 0 9px}
+.live-progress-fill{width:42%;height:100%;border-radius:99px;background:repeating-linear-gradient(115deg,#9ae721 0px,#9ae721 13px,#d0ff5b 13px,#d0ff5b 25px);background-size:180% 100%;box-shadow:0 0 17px #b5ff41a8,inset 0 1px 2px #ffffffaa;animation:neon-sweep 1.9s ease-in-out infinite,neon-shimmer 1.3s linear infinite;will-change:transform}
+.live-progress:after{content:'';position:absolute;inset:1px;border-radius:99px;background:linear-gradient(180deg,#ffffff25,transparent 48%);pointer-events:none}
+@keyframes neon-sweep{0%{transform:translateX(-105%)}100%{transform:translateX(245%)}}
+@keyframes neon-shimmer{to{background-position:180% 0}}
+.live-progress.done .live-progress-fill{width:100%;transform:none;animation:neon-finish .4s ease-out both;background:linear-gradient(90deg,#72ce14,#d1fa4d);box-shadow:0 0 22px #b9ff4c80}
+@keyframes neon-finish{from{opacity:.5}to{opacity:1}}
+.live-progress.failed .live-progress-fill{width:100%;transform:none;animation:none;background:linear-gradient(90deg,#a42e2e,#f16b6b);box-shadow:0 0 12px #ff4e4e55}
+.live-step{color:#a3b29c;font-size:.7rem;margin:5px 0 16px}
+.live-run{background:#c8f95c;color:#17210c;border-radius:12px;font-size:.78rem;font-weight:850;padding:11px;box-shadow:0 5px 20px #b2fa4330}
+.live-run:hover{background:#ddff8a;color:#17210c}
+.live-run:disabled{opacity:.7;color:#17210c}
+.live-foot{color:#8fa088;font-size:.68rem;line-height:1.5;margin-top:13px}
+@media(max-width:575.98px){.live-dialog{width:min(100%,370px);padding:23px 21px 20px}}
+@media(prefers-reduced-motion:reduce){.live-progress-fill{animation:none;transform:none;width:100%;background:#a9ee37}}
+/* Background sync: unobtrusive inline status, no modal */
+.live-overlay{display:none!important}
+.sync-indicator[hidden]{display:none!important}
+.sync-indicator{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;background:#ffffff22;color:#fff;font-size:.71rem;font-weight:700;max-width:100%}
+.sync-indicator .sync-dot{height:7px;width:7px;flex-shrink:0;border-radius:50%;background:#b8ff68;box-shadow:0 0 0 3px #b8ff6830;animation:sync-pulse 1.4s ease-in-out infinite}
+.sync-indicator.done .sync-dot{animation:none;background:#61e9a6}
+.sync-indicator.failed .sync-dot{animation:none;background:#ffacaf}
+@keyframes sync-pulse{50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.sync-indicator .sync-dot{animation:none}}
+</style></head><body><main class="container app py-4"><header class="mast p-4 p-md-5 mb-4"><img class="hero-photo" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1000&q=85" alt="" loading="lazy" onerror="this.style.display='none'"><div class="d-flex align-items-center topline gap-3"><span class="brand-mark"><i class="bi bi-grid-1x2-fill"></i></span><div><div style="font-size:.67rem;letter-spacing:.16em;font-weight:750;color:#dedbff">YOUR DAILY MARKET SNAPSHOT</div><h1 class="mb-0">Quick Dashboard <span style="color:#f8ce71">✦</span></h1></div></div><div class="d-flex justify-content-between align-items-end gap-2 flex-wrap bottomline mt-4"><div><p class="mb-1">Markets · Currency · Precious metals · Fuel</p><div class="state"><span id="dot" class="dot"></span><span id="status">Loading prices…</span></div><div id="updated" class="statusline mt-1">Not updated yet</div></div><div class="live-actions"><span id="syncIndicator" class="sync-indicator" role="status" aria-live="polite"><span class="sync-dot"></span><span id="syncText">Preparing update…</span></span><button id="liveUpdate" type="button" class="btn btn-live"><i class="bi bi-lightning-charge-fill me-1"></i> Update Live Data</button><button id="refresh" class="btn btn-refresh"><i class="bi bi-arrow-clockwise me-1"></i> Refresh</button></div></div></header>
 <div class="section-label mb-2">At a glance</div><div class="row g-3 mb-4"><div class="col-6 col-lg-4"><article class="market-card sensex"><img class="photo" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="d-flex align-items-center justify-content-between gap-1"><span class="iconbox"><i class="bi bi-graph-up-arrow"></i></span><span class="chip">BSE</span></div><div class="card-label mt-3">SENSEX</div><div class="card-num mt-1 accent-value" id="sensex">—</div><div class="card-detail mt-1" id="sensexChange">Loading…</div><div class="tiny mt-2" id="sensexSource">BSE India official quote</div></article></div><div class="col-6 col-lg-4"><article class="market-card fx"><img class="photo" src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="d-flex align-items-center justify-content-between gap-1"><span class="iconbox"><i class="bi bi-currency-exchange"></i></span><span class="chip">MYR / INR</span></div><div class="card-label mt-3">1 MYR IN INR</div><div class="card-num mt-1 accent-value" id="fx">—</div><div class="card-detail mt-1">Malaysian ringgit to rupees</div><div class="tiny mt-2" id="fxSource">XE mid-market exchange rate</div></article></div><div class="col-6 col-lg-4"><article class="market-card gold"><img class="photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="d-flex align-items-center justify-content-between gap-1"><span class="iconbox"><i class="bi bi-gem"></i></span><span class="chip">24K · 1g</span></div><div class="card-label mt-3">MALAYSIA GOLD</div><div class="card-num mt-1 accent-value" id="myGold">—</div><div class="card-detail mt-1">Goodreturns Malaysia · RM / gram</div><div class="tiny mt-2" id="goldSource">Goodreturns Malaysia · indicative</div></article></div></div>
-<div class="section-label mb-2">Prices & rates</div><div class="row g-3 mb-3"><div class="col-12 col-md-6"><section class="panel gold"><img class="panel-photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-stars me-2"></i>Malaysia Gold</h2><span class="chip">RM / gram</span></div><div class="rate-row"><span>24K Gold</span><strong id="my24">—</strong></div><div class="rate-row"><span>22K Gold</span><strong id="my22">—</strong></div><div class="rate-row"><span>18K Gold</span><strong id="my18">—</strong></div><div class="note">Goodreturns indicative rates; jeweller checkout prices may differ. <a href="https://www.goodreturns.in/gold-rates/malaysia.html" target="_blank" rel="noopener noreferrer">View live rates on Goodreturns ↗</a></div></section></div><div class="col-12 col-md-6"><section class="panel indiametal"><img class="panel-photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-coin me-2"></i>India Gold & Silver</h2><span class="chip">INR</span></div><div class="rate-row"><span>Gold 24K · 1 gram</span><strong id="in24">—</strong></div><div class="rate-row"><span>Gold 22K · 10 grams</span><strong id="in22">—</strong></div><div class="rate-row"><span>Silver · 1 gram</span><strong id="silverGram">—</strong></div><div class="rate-row"><span>Silver · 1 kilogram</span><strong id="silverKg">—</strong></div><div class="note">Goodreturns Vijayawada indicative rates; jewellery taxes and making charges may differ. <a href="https://www.goodreturns.in/gold-rates/vijayawada.html" target="_blank" rel="noopener noreferrer">Gold ↗</a> · <a href="https://www.goodreturns.in/silver-rates/vijayawada.html" target="_blank" rel="noopener noreferrer">Silver ↗</a></div></section></div><div class="col-12"><section class="panel petrol"><img class="panel-photo" src="https://www.vivaenergy.com.au/images/carousel/006596df-0e5d-4458-a838-6048f4948aae_Who_are_you_banner_2.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-fuel-pump-fill me-2"></i>Malaysia Petrol & Diesel</h2><span class="chip">RM / litre</span></div><div class="row gx-4"><div class="col-12 col-md-6"><div class="rate-row"><span>RON95 · BUDI95</span><strong id="ron95">—</strong></div><div class="rate-row"><span>RON95 · Unsubsidised</span><strong id="ron95u">—</strong></div></div><div class="col-12 col-md-6"><div class="rate-row"><span>RON97</span><strong id="ron97">—</strong></div><div class="rate-row"><span>Diesel · Peninsular</span><strong id="diesel">—</strong></div></div></div><div class="note" id="fuelSource">Checking latest weekly government prices…</div></section></div></div><footer class="footer">Quick Dashboard · Reads latest collected data when opened and every 5 minutes · Some sites may block browser access</footer></main><div class="focus-backdrop" id="focusBackdrop" role="dialog" aria-modal="true" aria-label="Expanded dashboard information" aria-hidden="true"><div class="focus-frame" id="focusFrame"><span class="focus-tip"><i class="bi bi-arrows-angle-expand me-1"></i> Focus view</span><button type="button" class="focus-close" id="focusClose" aria-label="Close expanded view"><i class="bi bi-x-lg"></i></button><div id="focusContent"></div></div></div><div class="live-overlay" id="liveOverlay" role="dialog" aria-modal="true" aria-label="Update live market data" aria-hidden="true"><div class="live-dialog"><button type="button" class="live-x" id="liveClose" aria-label="Close"><i class="bi bi-x-lg"></i></button><div class="live-emblem"><i class="bi bi-lightning-charge-fill"></i></div><h2 class="live-title">Update Live Data</h2><p class="live-desc">Run the collector and track its completion without leaving the dashboard.</p><div class="live-status" id="liveStatus" role="status">Click Run Workflow to request the latest market data.</div><button type="button" class="live-run" id="liveRun"><i class="bi bi-play-circle-fill me-2"></i>Run Workflow</button><div class="live-foot">After completion, allow approximately 30 seconds for publishing, then click Refresh.</div></div></div><script>
+<div class="section-label mb-2">Prices & rates</div><div class="row g-3 mb-3"><div class="col-12 col-md-6"><section class="panel gold"><img class="panel-photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-stars me-2"></i>Malaysia Gold</h2><span class="chip">RM / gram</span></div><div class="rate-row"><span>24K Gold</span><strong id="my24">—</strong></div><div class="rate-row"><span>22K Gold</span><strong id="my22">—</strong></div><div class="rate-row"><span>18K Gold</span><strong id="my18">—</strong></div><div class="note">Goodreturns indicative rates; jeweller checkout prices may differ. <a href="https://www.goodreturns.in/gold-rates/malaysia.html" target="_blank" rel="noopener noreferrer">View live rates on Goodreturns ↗</a></div></section></div><div class="col-12 col-md-6"><section class="panel indiametal"><img class="panel-photo" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1000&q=85" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-coin me-2"></i>India Gold & Silver</h2><span class="chip">INR</span></div><div class="rate-row"><span>Gold 24K · 1 gram</span><strong id="in24">—</strong></div><div class="rate-row"><span>Gold 22K · 10 grams</span><strong id="in22">—</strong></div><div class="rate-row"><span>Silver · 1 gram</span><strong id="silverGram">—</strong></div><div class="rate-row"><span>Silver · 1 kilogram</span><strong id="silverKg">—</strong></div><div class="note">Goodreturns Vijayawada indicative rates; jewellery taxes and making charges may differ. <a href="https://www.goodreturns.in/gold-rates/vijayawada.html" target="_blank" rel="noopener noreferrer">Gold ↗</a> · <a href="https://www.goodreturns.in/silver-rates/vijayawada.html" target="_blank" rel="noopener noreferrer">Silver ↗</a></div></section></div><div class="col-12"><section class="panel petrol"><img class="panel-photo" src="https://www.vivaenergy.com.au/images/carousel/006596df-0e5d-4458-a838-6048f4948aae_Who_are_you_banner_2.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><div class="panel-head"><h2><i class="bi bi-fuel-pump-fill me-2"></i>Malaysia Petrol & Diesel</h2><span class="chip">RM / litre</span></div><div class="row gx-4"><div class="col-12 col-md-6"><div class="rate-row"><span>RON95 · BUDI95</span><strong id="ron95">—</strong></div><div class="rate-row"><span>RON95 · Unsubsidised</span><strong id="ron95u">—</strong></div></div><div class="col-12 col-md-6"><div class="rate-row"><span>RON97</span><strong id="ron97">—</strong></div><div class="rate-row"><span>Diesel · Peninsular</span><strong id="diesel">—</strong></div></div></div><div class="note" id="fuelSource">Checking latest weekly government prices…</div></section></div></div><footer class="footer">Quick Dashboard · Reads latest collected data when opened and every 5 minutes · Some sites may block browser access</footer></main><div class="focus-backdrop" id="focusBackdrop" role="dialog" aria-modal="true" aria-label="Expanded dashboard information" aria-hidden="true"><div class="focus-frame" id="focusFrame"><span class="focus-tip"><i class="bi bi-arrows-angle-expand me-1"></i> Focus view</span><button type="button" class="focus-close" id="focusClose" aria-label="Close expanded view"><i class="bi bi-x-lg"></i></button><div id="focusContent"></div></div></div><div class="live-overlay" id="liveOverlay" role="dialog" aria-modal="true" aria-label="Update live market data" aria-hidden="true"><div class="live-dialog"><button type="button" class="live-x" id="liveClose" aria-label="Close"><i class="bi bi-x-lg"></i></button><div class="live-emblem"><i class="bi bi-lightning-charge-fill"></i></div><h2 class="live-title">Market Data Sync</h2><p class="live-desc">LIVE SYNC · GITHUB ACTIONS</p><div class="live-status" id="liveStatus" role="status" aria-live="polite">Preparing market update…</div><div class="live-progress visible" id="liveProgress" role="progressbar" aria-label="Workflow in progress"><div class="live-progress-fill"></div></div><div class="live-step" id="liveStep">Connecting…</div><button type="button" class="live-run" id="liveRun"><i class="bi bi-play-circle-fill me-2"></i>Run Workflow</button><div class="live-foot" id="liveFoot">Once done, wait ~30s for publishing, then tap Refresh.</div></div></div><script>
 const $=id=>document.getElementById(id);
 const fmt=(n,d=2)=>Number.isFinite(Number(n))?Number(n).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}):'—';
 const set=(id,v)=>{const e=$(id);if(e)e.textContent=v};
@@ -178,6 +237,13 @@ const LIVE_WORKER = 'https://quick-dashboard-trigger.tcs99855.workers.dev';
 const liveOverlay = document.getElementById('liveOverlay');
 const liveRun = document.getElementById('liveRun');
 const liveStatus = document.getElementById('liveStatus');
+const liveProgress = document.getElementById('liveProgress');
+const liveStep = document.getElementById('liveStep');
+const liveFoot = document.getElementById('liveFoot');
+function progressState(state){
+ liveProgress.className='live-progress visible'+(state==='completed'?' done':state==='failed'?' failed':'');
+ liveProgress.setAttribute('aria-label',state==='completed'?'Workflow completed':state==='failed'?'Workflow failed':'Workflow in progress');
+}
 const liveClose = document.getElementById('liveClose');
 const liveUpdate = document.getElementById('liveUpdate');
 let trackingActive = false;
@@ -188,12 +254,31 @@ function closeLive(){
  document.body.classList.remove('focus-open');
  liveUpdate.focus();
 }
-liveUpdate.addEventListener('click',()=>{
- liveOverlay.classList.add('active');
- liveOverlay.setAttribute('aria-hidden','false');
- document.body.classList.add('focus-open');
- liveClose.focus();
-});
+// Manual update also runs silently without opening a popup.
+liveUpdate.addEventListener('click',()=>liveRun.click());
+const syncIndicator=document.getElementById('syncIndicator');
+const syncText=document.getElementById('syncText');
+let syncHideTimer=null;
+let autoRefreshTimer=null;
+function showSyncIndicator(){
+ clearTimeout(syncHideTimer);
+ syncHideTimer=null;
+ syncIndicator.hidden=false;
+}
+function hideSyncAfterCompletion(){
+ clearTimeout(syncHideTimer);
+ syncHideTimer=setTimeout(()=>{if(!trackingActive)syncIndicator.hidden=true;},6000);
+}
+function syncInlineStatus(){
+ const state=liveProgress.classList;
+ syncIndicator.classList.toggle('done',state.contains('done'));
+ syncIndicator.classList.toggle('failed',state.contains('failed'));
+ syncText.textContent=state.contains('done')?'Update completed · Auto-refresh in 30s':
+  state.contains('failed')?'Update failed · Try again':
+  trackingActive?(liveStatus.textContent||'Updating…'):'Ready to update';
+}
+new MutationObserver(syncInlineStatus).observe(liveStatus,{childList:true,characterData:true,subtree:true});
+new MutationObserver(syncInlineStatus).observe(liveProgress,{attributes:true,attributeFilter:['class']});
 liveClose.addEventListener('click',closeLive);
 liveOverlay.addEventListener('click',e=>{if(e.target===liveOverlay)closeLive()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&liveOverlay.classList.contains('active'))closeLive()});
@@ -212,14 +297,21 @@ async function workerJSON(url,options={}) {
 liveRun.addEventListener('click',async()=>{
  if(trackingActive)return;
  trackingActive=true;
+ clearTimeout(autoRefreshTimer);
+ autoRefreshTimer=null;
+ showSyncIndicator();
  liveRun.disabled=true;
- liveRun.textContent='Tracking workflow…';
- liveStatus.textContent='Sending request to GitHub Actions…';
+ liveRun.textContent='Updating…';
+ progressState('running');
+ liveStep.textContent='Starting workflow';
+ liveStatus.textContent='Connecting to GitHub…';
+ liveFoot.textContent='This may take a minute. Keep this page open.';
  try {
   const started=await workerJSON(LIVE_WORKER+'/run',{method:'POST'});
   if(!started.request_id)throw new Error('Worker did not return a tracking ID. Deploy the new Worker script.');
   trackingId=started.request_id;
-  liveStatus.textContent='Workflow requested. Waiting for GitHub to start…';
+  liveStatus.textContent='Workflow requested';
+  liveStep.textContent='Waiting for GitHub runner…';
   const deadline=Date.now()+8*60*1000;
   let lastError=null;
   while(Date.now()<deadline){
@@ -230,32 +322,61 @@ liveRun.addEventListener('click',async()=>{
     lastError=null;
    }catch(error){
     lastError=error;
-    liveStatus.textContent='Status check temporarily unavailable. Retrying…';
+    liveStatus.textContent='Reconnecting…';
+    liveStep.textContent='Retrying status check';
     continue;
    }
    if(state.status==='pending'||state.status==='queued'){
-    liveStatus.textContent='Workflow queued. Waiting for a runner…';
+    liveStatus.textContent='Queued';
+    liveStep.textContent='Waiting for GitHub runner…';
    }else if(state.status==='in_progress'){
-    liveStatus.textContent='Refreshing market data…';
+    liveStatus.textContent='Updating market prices…';
+    liveStep.textContent='Collector running';
    }else if(state.status==='completed'){
     if(state.conclusion==='success'){
-     liveStatus.textContent='✓ Market Data Refresh Completed. The latest market data has been collected successfully. Please allow approximately 30 seconds for the website to publish the update, then click Refresh to view the latest prices and timestamps.';
+     progressState('completed');
+     liveStatus.textContent='✓ Market data updated';
+     liveStep.textContent='Completed successfully';
+     liveFoot.textContent='Dashboard will refresh automatically in 30 seconds.';
+     // Wait for GitHub Pages to publish the committed JSON before refreshing.
+     autoRefreshTimer=setTimeout(()=>{
+      autoRefreshTimer=null;
+      document.getElementById('refresh').click();
+     },30000);
     }else{
-     liveStatus.textContent='✕ Refresh failed ('+(state.conclusion||'unknown')+'). Check GitHub Actions.';
+     progressState('failed');
+     liveStatus.textContent='✕ Update failed';
+     liveStep.textContent='GitHub Actions: '+(state.conclusion||'unknown');
+     liveFoot.textContent='Check GitHub Actions or retry.';
     }
     return;
    }else{
-    liveStatus.textContent='Checking workflow status…';
+    liveStatus.textContent='Checking progress…';
+    liveStep.textContent='Tracking GitHub Actions';
    }
   }
-  liveStatus.textContent='Status tracking timed out after 8 minutes. '+(lastError?'Last error: '+lastError.message+'. ':'')+'Check GitHub Actions for the final result.';
+  progressState('failed');
+  liveStatus.textContent='Status check timed out';
+  liveStep.textContent='Check GitHub Actions for the result';
  }catch(error){
-  liveStatus.textContent='Could not start or track workflow: '+error.message;
+  progressState('failed');
+  liveStatus.textContent='Unable to start update';
+  liveStep.textContent=error.message;
  }finally{
   trackingActive=false;
   trackingId=null;
   liveRun.disabled=false;
-  liveRun.innerHTML='<i class="bi bi-play-circle-fill me-2"></i>Run Workflow';
+  liveRun.innerHTML='<i class="bi bi-arrow-repeat me-2"></i>Run Again';
+  syncInlineStatus();
+  hideSyncAfterCompletion();
  }
+});
+// Trigger background collection on each page load; never open a popup.
+// Note: each visit/reload starts a new GitHub Actions run.
+window.addEventListener('load',()=>{
+ setTimeout(()=>{
+  if(trackingActive)return;
+  liveRun.click();
+ },1000);
 });
 </script></body></html>
