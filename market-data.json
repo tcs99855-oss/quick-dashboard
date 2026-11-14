@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T05:08:40.669092+00:00",
+  "generated_at": "2026-11-14T17:54:46.733418+00:00",
   "values": {
     "sensex": {
       "value": {
@@ -13,11 +13,11 @@
     },
     "fx": {
       "value": {
-        "inr": 23.0696,
+        "inr": 23.0687,
         "usd_per_myr": null
       },
       "source": "XE MYR to INR displayed mid-market quote",
-      "asof": "2026-11-14T05:08:41.359741+00:00",
+      "asof": "2026-11-14T17:54:47.747149+00:00",
       "url": "https://www.xe.com/currencyconverter/convert/?Amount=1&From=MYR&To=INR"
     },
     "gold_my": {
