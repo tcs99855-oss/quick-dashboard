@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T03:26:01.964434+00:00",
+  "generated_at": "2026-11-14T03:58:12.105934+00:00",
   "values": {
     "sensex": {
       "value": {
@@ -17,7 +17,7 @@
         "usd_per_myr": null
       },
       "source": "XE MYR to INR displayed mid-market quote",
-      "asof": "2026-11-14T03:26:02.835477+00:00",
+      "asof": "2026-11-14T03:58:12.677352+00:00",
       "url": "https://www.xe.com/currencyconverter/convert/?Amount=1&From=MYR&To=INR"
     },
     "gold_my": {
@@ -32,8 +32,8 @@
     },
     "gold_in": {
       "value": {
-        "k24": 13734.0,
-        "k22": 12589.0
+        "k24": 13762.0,
+        "k22": 12615.0
       },
       "source": "Goodreturns Vijayawada indicative gold rates",
       "asof": "2026-11-14",
