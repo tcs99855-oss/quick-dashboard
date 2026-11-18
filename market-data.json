@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T15:43:05.299240+00:00",
+  "generated_at": "2026-11-18T16:03:04.490702+00:00",
   "values": {
     "sensex": {
       "value": {
@@ -17,7 +17,7 @@
         "usd_per_myr": null
       },
       "source": "XE MYR to INR displayed mid-market quote",
-      "asof": "2026-11-18T15:43:05.893548+00:00",
+      "asof": "2026-11-18T16:03:05.048681+00:00",
       "url": "https://www.xe.com/currencyconverter/convert/?Amount=1&From=MYR&To=INR"
     },
     "gold_my": {
@@ -51,12 +51,12 @@
     "fuel": {
       "value": {
         "ron95_budi95": 1.99,
-        "ron95": 3.87,
-        "ron97": 4.2,
-        "diesel": 4.87
+        "ron95": 3.72,
+        "ron97": 4.0,
+        "diesel": 4.72
       },
       "source": "Malaysia government official fuel price schedule",
-      "asof": "2026-11-12",
+      "asof": "2026-11-19",
       "url": "https://data.gov.my/data-catalogue/fuelprice"
     }
   },
