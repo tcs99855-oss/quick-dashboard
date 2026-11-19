@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-19T04:42:06.179397+00:00",
+  "generated_at": "2026-11-19T06:13:36.294055+00:00",
   "values": {
     "sensex": {
       "value": {
-        "price": 82234.01,
-        "change": 202.2,
-        "pct": 0.25
+        "price": 82353.75,
+        "change": 321.94,
+        "pct": 0.39
       },
       "source": "BSE India official Sensex quote",
-      "asof": "2026-11-19T10:11:00+05:30",
+      "asof": "2026-11-19T11:42:00+05:30",
       "url": "https://www.bseindia.com/"
     },
     "fx": {
@@ -17,7 +17,7 @@
         "usd_per_myr": null
       },
       "source": "XE MYR to INR displayed mid-market quote",
-      "asof": "2026-11-19T04:42:06.818131+00:00",
+      "asof": "2026-11-19T06:13:36.733349+00:00",
       "url": "https://www.xe.com/currencyconverter/convert/?Amount=1&From=MYR&To=INR"
     },
     "gold_my": {
