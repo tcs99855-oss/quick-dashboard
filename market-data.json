@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-19T03:45:01.600988+00:00",
+  "generated_at": "2026-11-19T04:13:44.814100+00:00",
   "values": {
     "sensex": {
       "value": {
-        "price": 82074.16,
-        "change": 42.35,
-        "pct": 0.05
+        "price": 82040.64,
+        "change": 8.83,
+        "pct": 0.01
       },
       "source": "BSE India official Sensex quote",
-      "asof": "2026-11-19T09:14:00+05:30",
+      "asof": "2026-11-19T09:43:00+05:30",
       "url": "https://www.bseindia.com/"
     },
     "fx": {
@@ -17,7 +17,7 @@
         "usd_per_myr": null
       },
       "source": "XE MYR to INR displayed mid-market quote",
-      "asof": "2026-11-19T03:45:02.441014+00:00",
+      "asof": "2026-11-19T04:13:45.419301+00:00",
       "url": "https://www.xe.com/currencyconverter/convert/?Amount=1&From=MYR&To=INR"
     },
     "gold_my": {
@@ -32,8 +32,8 @@
     },
     "gold_in": {
       "value": {
-        "k24": 13325.0,
-        "k22": 12214.0
+        "k24": 13069.0,
+        "k22": 11980.0
       },
       "source": "Goodreturns Vijayawada indicative gold rates",
       "asof": "2026-11-19",
@@ -41,8 +41,8 @@
     },
     "silver_in": {
       "value": {
-        "gram": 184.9,
-        "kg": 184900.0
+        "gram": 180.0,
+        "kg": 180000.0
       },
       "source": "Goodreturns Vijayawada indicative silver rates",
       "asof": "2026-11-19",
