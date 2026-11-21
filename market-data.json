@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T01:17:29.523349+00:00",
+  "generated_at": "2026-11-21T02:48:16.371752+00:00",
   "values": {
     "sensex": {
       "value": {
@@ -17,14 +17,14 @@
         "usd_per_myr": null
       },
       "source": "XE MYR to INR displayed mid-market quote",
-      "asof": "2026-11-21T01:17:30.226056+00:00",
+      "asof": "2026-11-21T02:48:17.004789+00:00",
       "url": "https://www.xe.com/currencyconverter/convert/?Amount=1&From=MYR&To=INR"
     },
     "gold_my": {
       "value": {
-        "k24": 488.0,
-        "k22": 457.0,
-        "k18": 373.9
+        "k24": 482.0,
+        "k22": 453.0,
+        "k18": 370.6
       },
       "source": "Goodreturns Malaysia indicative gold rates",
       "asof": "2026-11-21",
