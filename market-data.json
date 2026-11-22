@@ -1,23 +1,13 @@
 {
-  "generated_at": "2026-11-21T20:18:13.017796+00:00",
+  "generated_at": "2026-11-22T01:32:33.194353+00:00",
   "values": {
-    "sensex": {
-      "value": {
-        "price": 83919.71,
-        "change": 897.96,
-        "pct": 1.08
-      },
-      "source": "BSE India official Sensex quote",
-      "asof": "2026-11-20T16:00:00+05:30",
-      "url": "https://www.bseindia.com/"
-    },
     "fx": {
       "value": {
         "inr": 22.5225,
         "usd_per_myr": null
       },
       "source": "XE MYR to INR displayed mid-market quote",
-      "asof": "2026-11-21T20:18:13.617628+00:00",
+      "asof": "2026-11-22T01:32:33.318917+00:00",
       "url": "https://www.xe.com/currencyconverter/convert/?Amount=1&From=MYR&To=INR"
     },
     "gold_my": {
@@ -58,7 +48,20 @@
       "source": "Malaysia government official fuel price schedule",
       "asof": "2026-11-19",
       "url": "https://data.gov.my/data-catalogue/fuelprice"
+    },
+    "sensex": {
+      "value": {
+        "price": 83919.71,
+        "change": 897.96,
+        "pct": 1.08
+      },
+      "source": "BSE India official Sensex quote",
+      "asof": "2026-11-20T16:00:00+05:30",
+      "url": "https://www.bseindia.com/",
+      "stale": true
     }
   },
-  "errors": {}
+  "errors": {
+    "sensex": "403 Client Error: Forbidden for url: https://api.bseindia.com/RealTimeBseIndiaAPI/api/GetSensexData/w"
+  }
 }
