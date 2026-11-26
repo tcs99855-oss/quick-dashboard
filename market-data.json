@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-11-26T06:11:26.319618+00:00",
+  "generated_at": "2026-11-26T10:59:45.865637+00:00",
   "values": {
     "sensex": {
       "value": {
-        "price": 84257.46,
-        "change": 319.18,
-        "pct": 0.38
+        "price": 84328.59,
+        "change": 390.31,
+        "pct": 0.46
       },
       "source": "BSE India official Sensex quote",
-      "asof": "2026-11-26T11:41:00+05:30",
+      "asof": "2026-11-26T16:00:00+05:30",
       "url": "https://www.bseindia.com/"
     },
     "fx": {
       "value": {
-        "inr": 22.4291,
+        "inr": 22.4803,
         "usd_per_myr": null
       },
       "source": "XE MYR to INR displayed mid-market quote",
-      "asof": "2026-11-26T06:11:27.547990+00:00",
+      "asof": "2026-11-26T10:59:46.527758+00:00",
       "url": "https://www.xe.com/currencyconverter/convert/?Amount=1&From=MYR&To=INR"
     },
     "gold_my": {
@@ -32,8 +32,8 @@
     },
     "gold_in": {
       "value": {
-        "k24": 12589.0,
-        "k22": 11540.0
+        "k24": 12480.0,
+        "k22": 11440.0
       },
       "source": "Goodreturns Vijayawada indicative gold rates",
       "asof": "2026-11-26",
